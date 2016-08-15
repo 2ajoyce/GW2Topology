@@ -196,6 +196,7 @@ nav a:hover {
     nav a{
         background: rgba(0, 0, 0, 0.5);
         margin-right: 10%;
+        margin-left: 10%;
         border-bottom: 5px rgba(241, 101, 41, 0);
     }
 
