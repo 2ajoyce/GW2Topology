@@ -1,3 +1,4 @@
+
 (function() {
   
   //////////////////////////////////////////////////////////////////////
@@ -11,7 +12,7 @@
   var waypointIcon = L.divIcon({
     iconSize: [22, 22], // size of the icon
     className:"markerIcon",
-    html:"<a><img class=\"waypoint\" data-clipboard-target=\"#clipdump\" src=\"https:\/\/wiki.guildwars2.com\/images\/d\/d2\/Waypoint_%28map_icon%29.png\" alt=\"Copy to clipboard\"> <\/a>"
+    html:"<a><img class=\"waypoint\" data-clipboard-target=\"#clipdump\" src=\".\/img\/Waypoint.png\" alt=\"Copy to clipboard\"> <\/a>"
   });
 
   // Instantiate the clipboardjs object
