@@ -1,428 +1,231 @@
-/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+/* ========================================================================
+   GW2 Topology - Custom Styles
+   ======================================================================== */
+
+/* ========================================================================
+   Base & Layout
+   ======================================================================== */
 
 html {
-    color: #222;
-    font-size: 1em;
-    line-height: 1.4;
-}
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-    vertical-align: middle;
-}
-
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
-textarea {
-    resize: vertical;
-}
-
-.browserupgrade {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
-
-/* ===== Initializr Styles ==================================================
-   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
-   ========================================================================== */
-
-body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
-}
-
-.wrapper {
+    height: 100%;
     width: 100%;
     margin: 0;
+    padding: 0;
 }
 
-/* ===================
-    ALL: Orange Theme
-   =================== */
-
-.header-container {
-    border-bottom: 5px solid rgba(0, 0, 0, 0.8);
-}
-
-/*.footer-container,
-.main aside {
-    border-top: 20px solid #e44d26;
-}*/
-
-.header-container,
-.footer-container,
-.main aside {
-    background: rgba(241, 101, 41, 0.5);
-}
-
-.title {
-    color: white;
-}
-
-/* ==============
-    MOBILE: Menu
-   ============== */
-
-nav ul {
+body {
+    font-family: 'Lora', serif;
+    height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
-    list-style-type: none;
+    display: flex;
+    flex-direction: column;
 }
 
-nav a {
-    display: block;
-    margin-bottom: 5px;
-    padding: 5px 0;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nunito', sans-serif;
+}
 
-    text-align: center;
+/* ========================================================================
+   Header
+   ======================================================================== */
+
+.site-header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    border-bottom: 3px solid #e74c3c;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.site-title {
+    color: #ecf0f1;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.site-nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-link {
+    color: #ecf0f1;
     text-decoration: none;
-    font-weight: bold;
-
-    color: white;
-    background: #e44d26;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
 }
 
-nav a:hover,
-nav a:visited {
-    color: white;
+.nav-link:hover {
+    background: rgba(231, 76, 60, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-nav a:hover {
-    text-decoration: underline;
+.nav-link.active {
+    background: #e74c3c;
 }
 
-/* ==============
-    MOBILE: Main
-   ============== */
+/* ========================================================================
+   Map Container
+   ======================================================================== */
 
-.main {
-    padding: 5px 0;
+.map-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
 }
 
-.main article h1 {
-    font-size: 2em;
+#mapdiv {
+    height: 100%;
+    width: 100%;
+    background-color: #1a1a1a;
 }
 
-.main aside {
-    color: white;
-    padding: 0px 5% 5px;
+/* ========================================================================
+   Leaflet Customization
+   ======================================================================== */
+
+.leaflet-container {
+    background-color: #1a1a1a;
 }
 
-.footer-container footer {
-    color: white;
-    padding: 5px 0;
+.markerIcon {
+    background-color: transparent;
 }
 
-/* ===============
-    ALL: IE Fixes
-   =============== */
-
-.ie7 .title {
-    padding-top: 5px;
+.waypoint {
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
 }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-    html {
-        height:100%;
-        width:100%;
-        margin: 0;
-        padding: 0;
+.waypoint:hover {
+    transform: scale(1.5);
+    filter: drop-shadow(0 0 8px rgba(231, 76, 60, 0.8));
+}
+
+/* ========================================================================
+   Footer
+   ======================================================================== */
+
+.site-footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    border-top: 3px solid #e74c3c;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    position: relative;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-label {
+    color: #ecf0f1;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+#clipdump {
+    flex: 1;
+    max-width: 400px;
+    padding: 0.5rem 1rem;
+    border: 2px solid #e74c3c;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #2c3e50;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#clipdump:focus {
+    outline: none;
+    border-color: #c0392b;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+    background: white;
+}
+
+/* ========================================================================
+   Responsive Design
+   ======================================================================== */
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
     }
-    body {
-        font-family: 'Lora', serif;
-        height:100%;
-        width:100%;
-        margin: 0;
-        padding: 0;
+
+    .site-title {
+        font-size: 1.5rem;
     }
 
-    h1, h2, h3, h4, h5, h6 {
-        font-family: 'Nunito', sans-serif;
-        margin:10px;
-    }
-
-    .waypoint { transition: all .2s ease-in-out; }
-
-    .waypoint:hover { transform: scale(1.5); }
-
-    .markerIcon {
-        background-color:rgba(0,0,0,0);
-    }
-
-    .leaflet-container, .main-container, .main{
-        background-color: black;
-        position: relative;
-        height:100%;
-        width:100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    aside {
-        position: absolute;
-    }
-
-    nav a{
-        background: rgba(0, 0, 0, 0.5);
-        margin-right: 10%;
-        margin-left: 10%;
-        border-bottom: 5px rgba(241, 101, 41, 0);
-    }
-
-    .header-container {
+    .site-nav {
         width: 100%;
-        position: absolute;
-        z-index: 410;
-        background: rgba(51, 26, 0, 0.8);
-        border-bottom: 5px solid rgba(0, 0, 0, 0.8);
+        justify-content: center;
     }
 
-    .footer-container {
-        width: 100%;
-        bottom: 0;
-        position: absolute;
-        z-index: 400;
-        background: rgba(255, 255, 255, 0);
+    .footer-content {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
     }
 
     #clipdump {
-        background: rgba(255, 255, 255, 0.5);
-        color: black;
-        border: none;
-        width: 100px;
-        margin-left: 10px;
-    }
-
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
-
-@media only screen and (min-width: 480px) {
-
-/* ====================
-    INTERMEDIATE: Menu
-   ==================== */
-    nav a {
-        float: left;
-        width: 27%;
-        margin: 0 1.7%;
-        padding: 10px 2%;
-        margin-bottom: 0;
-    }
-
-    nav li:first-child a {
-        margin-left: 0;
-    }
-
-    nav li:last-child a {
-        margin-right: 0;
-    }
-
-/* ========================
-    INTERMEDIATE: IE Fixes
-   ======================== */
-
-    nav ul li {
-        display: inline;
-    }
-
-    .oldie nav a {
-        margin: 0 0.7%;
+        width: 100%;
+        max-width: 100%;
     }
 }
 
-@media only screen and (min-width: 768px) {
-
-/* ====================
-    WIDE: CSS3 Effects
-   ==================== */
-
-    .header-container,
-    .main aside {/*
-        -webkit-box-shadow: 0 5px 10px #aaa;
-           -moz-box-shadow: 0 5px 10px #aaa;
-                box-shadow: 0 5px 10px #aaa;*/
+@media (max-width: 480px) {
+    .site-title {
+        font-size: 1.25rem;
     }
 
-/* ============
-    WIDE: Menu
-   ============ */
-
-    .title {
-        float: left;
-    }
-
-    nav {
-        float: right;
-        width: 40%;
-    }
-
-/* ============
-    WIDE: Main
-   ============ */
-
-    .main article {
-        float: left;
-        width: 57%;
-    }
-
-    .main aside {
-        float: right;
-        width: 28%;
+    .nav-link {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
     }
 }
 
-@media only screen and (min-width: 1140px) {
-
-/* ===============
-    Maximal Width
-   =============== */
-
-    /*.wrapper {
-        width: 1026px;  1140px - 10% for margins 
-        margin: 0 auto;
-    }*/
-}
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
+/* ========================================================================
+   Utility Classes
+   ======================================================================== */
 
 .hidden {
     display: none !important;
-    visibility: hidden;
 }
 
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
+.sr-only {
     position: absolute;
     width: 1px;
-}
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
-
-.invisible {
-    visibility: hidden;
-}
-
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-.clearfix {
-    *zoom: 1;
-}
-
-/* ==========================================================================
-   Print styles
-   ========================================================================== */
-
-@media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important;
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    thead {
-        display: table-header-group;
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
