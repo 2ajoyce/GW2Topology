@@ -13,7 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function setTheme(theme) {
   document.body.setAttribute("data-theme", theme);
-  document.getElementById("theme-select").value = theme;
+  const themeSelect = document.getElementById("theme-select");
+  if (themeSelect) {
+    themeSelect.value = theme;
+  }
 
   // Separately, set the background color of the root element
   const root = document.documentElement;
@@ -22,8 +25,11 @@ function setTheme(theme) {
   );
 }
 
-document.getElementById("theme-select").addEventListener("change", function () {
-  const selectedTheme = this.value;
-  setTheme(selectedTheme);
-  localStorage.setItem("theme", selectedTheme);
-});
+const themeSelectElement = document.getElementById("theme-select");
+if (themeSelectElement) {
+  themeSelectElement.addEventListener("change", function () {
+    const selectedTheme = this.value;
+    setTheme(selectedTheme);
+    localStorage.setItem("theme", selectedTheme);
+  });
+}
