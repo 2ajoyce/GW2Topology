@@ -14,7 +14,7 @@ html {
 }
 
 body {
-    font-family: 'Lora', serif;
+    font-family: Lora, serif;
     height: 100%;
     width: 100%;
     margin: 0;
@@ -24,7 +24,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
 }
 
 /* ========================================================================
@@ -154,7 +154,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 4px;
     background: rgba(255, 255, 255, 0.95);
     color: #2c3e50;
-    font-family: 'Courier New', monospace;
+    font-family: "Courier New", monospace;
     font-size: 0.9rem;
     font-weight: 600;
     transition: all 0.3s ease;
