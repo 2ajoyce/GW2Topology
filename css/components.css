@@ -1,0 +1,192 @@
+/* Styles for interactive components */
+
+/* Alerts */
+/* Toasts, defined lower in the stylesheet, use the .alert styling */
+.alert,
+.toast {
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+
+  background-color: var(--primary-bg-subtle);
+  color: var(--primary-text-subtle);
+  border-color: var(--primary-border-subtle);
+}
+
+.alert.success,
+.toast.success {
+  background-color: var(--success-bg-subtle);
+  color: var(--success-text-subtle);
+  border-color: var(--success-border-subtle);
+}
+
+.alert.warning,
+.toast.warning {
+  background-color: var(--warning-bg-subtle);
+  color: var(--warning-text-subtle);
+  border-color: var(--warning-border-subtle);
+}
+
+.alert.danger,
+.toast.danger {
+  background-color: var(--danger-bg-subtle);
+  color: var(--danger-text-subtle);
+  border-color: var(--danger-border-subtle);
+}
+
+/* Avatar */
+.avatar {
+  width: var(--avatar-size, 3rem);
+  height: var(--avatar-size, 3rem);
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--secondary-color);
+  vertical-align: middle;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar.small {
+  width: 2rem;
+  height: 2rem;
+}
+
+.avatar.large {
+  width: 4rem;
+  height: 4rem;
+}
+
+/* Badge / Tag */
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  background-color: var(--primary-color);
+  color: var(--primary-text-color);
+}
+
+.tag.secondary {
+  background-color: var(--secondary-color);
+  color: var(--secondary-text-color);
+}
+
+.tag.success {
+  background-color: var(--success-color);
+  color: var(--success-text-color);
+}
+
+.tag.warning {
+  background-color: var(--warning-color);
+  color: var(--warning-text-color);
+}
+
+.tag.danger {
+  background-color: var(--danger-color);
+  color: var(--danger-text-color);
+}
+
+.tag.outline {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* Breadcrumbs */
+.breadcrumbs ol {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+  content: "/";
+  margin-left: 0.5rem;
+  color: var(--secondary-text-color);
+}
+
+/* Card */
+/* The base .card styling can be found in layout.css */
+
+/* Card Extensions */
+.card-header {
+  border-bottom: 1px solid var(--secondary-text-color);
+}
+
+.card-footer {
+  margin-top: 1rem;
+  border-top: 1px solid var(--secondary-text-color);
+  color: var(--secondary-text-color);
+}
+
+/* Toast */
+.toast {
+  /* The .toast class inherits most of its styling from .alert
+  higher in the stylesheet */
+
+  /* As a floating element, toasts include a box shadow */
+  box-shadow: var(--box-shadow);
+
+  /* Initially hidden */
+  display: none;
+}
+
+.toast.show {
+  display: flex;
+  animation: toast-in 0.3s ease-out;
+}
+
+@keyframes toast-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted var(--text-color);
+  cursor: help;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: max-content;
+  max-width: 50rem;
+  background-color: var(--text-color);
+  color: var(--background-color);
+  text-align: center;
+  border-radius: 4px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-text,
+.tooltip:focus .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}

@@ -19,3 +19,6 @@ build-ci:
     done
     FILE_NAME="gw2topology_${DATE}_${I}.zip"
     zip -r "$FILE_NAME" css img js index.html favicon.ico LICENSE README.md
+
+serve: 
+    python -m http.server 8000

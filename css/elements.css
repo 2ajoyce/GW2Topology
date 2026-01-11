@@ -1,0 +1,499 @@
+/* Base styles */
+html {
+  background-color: var(--background-color);
+}
+
+body {
+  font-family: Lora, serif;
+  line-height: 1.6;
+  font-size: 1rem;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-width: 20rem;
+}
+
+/* There is no styling applied to div elements */
+/* div {} */
+
+h1 {
+  margin: 1.5rem 0 1rem;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 1.25rem 0 0.75rem;
+  font-weight: bold;
+  font-size: 1.75rem;
+}
+
+h3 {
+  margin: 1rem 0 0.5rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+h4 {
+  margin: 0.75rem 0 0.25rem;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+h5 {
+  margin: 0.5rem 0 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+h6 {
+  margin: 0.25rem 0 0;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  margin: 1rem 0;
+  min-width: 10rem;
+}
+
+blockquote {
+  margin: 1rem 0;
+  padding: 1rem 2rem;
+  background-color: var(--secondary-color);
+  border-left: 5px solid var(--primary-color);
+}
+
+pre {
+  font-family: "Courier New", Courier, monospace;
+  background-color: var(--secondary-color);
+  padding: 5px;
+  border-radius: 3px;
+  overflow-x: auto;
+}
+
+pre.wrap {
+  white-space: pre-wrap;
+}
+
+code {
+  font-family: "Courier New", Courier, monospace;
+  background-color: var(--inline-code-background-color);
+  color: var(--inline-code-text-color);
+  padding: 2px 6px;
+  border-radius: 0.25rem;
+  font-size: 0.95em;
+  white-space: nowrap;
+  border: 1px solid var(--inline-code-border-color);
+}
+
+code.multiline {
+  display: block;
+  white-space: pre-wrap;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+mark {
+  background-color: var(--highlight-color);
+  color: var(--highlighted-text-color);
+}
+
+del {
+  text-decoration: line-through;
+}
+
+ins {
+  text-decoration: underline;
+}
+
+sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+small {
+  font-size: smaller;
+}
+
+/* Horizontal Rule */
+hr {
+  border: none;
+  border-top: 1px solid var(--secondary-color);
+  margin: 1rem 0;
+}
+
+/* Links */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--link-hover-color);
+}
+
+a:visited,
+a.visited {
+  color: var(--link-visited-color);
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover,
+nav a:hover {
+  color: var(--primary-color);
+}
+
+/* Lists */
+ul,
+ol {
+  padding-left: 1rem;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+/* There is no styling applied to li elements */
+/* li {} */
+
+dl {
+  padding-left: 1rem;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  padding-left: 1rem;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+thead {
+  background-color: var(--secondary-color);
+}
+
+th {
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--primary-color);
+  border-right: 1px solid var(--secondary-color);
+  border-left: 1px solid var(--secondary-color);
+  text-align: left;
+  font-weight: bold;
+}
+
+th:first-child {
+  border-top-left-radius: 10px;
+  border-left: none;
+}
+
+th:last-child {
+  border-top-right-radius: 10px;
+  border-right: none;
+}
+
+td {
+  padding: 0.5rem;
+  border: 1px solid var(--secondary-color);
+  text-align: left;
+}
+
+/* There is no styling applied to tbody elements */
+/* tbody {} */
+
+/* There is no styling applied to tr elements */
+/* tr {} */
+
+/* Forms */
+form {
+  background-color: var(--secondary-background-color);
+  padding: 2rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/* A label which sits to the left of the input */
+label.left {
+  margin-right: 0.5rem;
+}
+
+/* A label which sits to the right of the input */
+label.right {
+  margin-left: 0.5rem;
+}
+
+/* A label which is aligned to the bottom of the input */
+label.ground {
+  align-self: end;
+}
+
+/* If the label is for a toggle switch, center it vertically since toggles can be taller than normal checkboxes in some cases */
+input[type="checkbox"].toggle + label {
+  align-self: center;
+}
+
+input,
+textarea,
+select {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  font-family: Lora, serif;
+}
+
+select {
+  width: fit-content;
+}
+
+input[type="radio"] {
+  width: auto;
+  height: auto;
+  margin-right: 0.5rem;
+  padding: 0;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  height: auto;
+  margin-right: 0.5rem;
+  padding: 0;
+}
+
+/* Toggle Switch */
+input[type="checkbox"].toggle {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 3rem;
+  height: 1.5rem;
+  padding: 0;
+  background-color: var(--secondary-color);
+  border-radius: 1.5rem;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  border: 1px solid var(--secondary-color);
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+input[type="checkbox"].toggle::before {
+  content: "";
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  top: 50%;
+  left: 0.125rem;
+  transform: translateY(-50%);
+  background-color: var(--secondary-background-color);
+  transition: transform 0.3s;
+}
+
+input[type="checkbox"].toggle:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+input[type="checkbox"].toggle:checked::before {
+  transform: translateY(-50%) translateX(1.5rem);
+}
+
+input[type="checkbox"].toggle:focus {
+  box-shadow: 0 0 5px var(--primary-color);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+fieldset {
+  border: 1px solid var(--secondary-color);
+  padding: 1.5rem;
+  border-radius: 5px;
+}
+
+legend {
+  font-weight: bold;
+  color: var(--text-color);
+  padding: 0 0.5rem;
+}
+
+/* Media */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  font-style: italic;
+  color: var(--text-color);
+}
+
+audio,
+video {
+  display: block;
+  margin: 2rem 0;
+  max-width: 100%;
+}
+
+/* Canvas */
+canvas {
+  display: block;
+  margin: 2rem 0;
+  border: 1px solid var(--secondary-color);
+  max-width: 100%;
+}
+
+/* Section styles */
+section {
+  padding: 2rem;
+  background-color: var(--secondary-background-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 5px;
+}
+
+section > h2:first-of-type {
+  text-decoration: underline;
+  margin-top: 0;
+}
+
+/* Header styles */
+header {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: 2rem;
+  border-bottom: 1px solid var(--primary-color);
+  min-width: 20rem;
+}
+
+header .right {
+  margin-left: auto;
+}
+
+@media (max-width: 40rem) {
+  header .right {
+    margin-top: 2rem;
+    margin-left: 0;
+  }
+}
+
+header h1 {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+header nav a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+header a:visited {
+  color: var(--text-color);
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 40rem) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+nav a.active {
+  text-decoration: underline;
+}
+
+nav select {
+  padding: 0.25rem 1rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: 2rem;
+  border-top: 1px solid var(--primary-color);
+}
+
+/* Details */
+details {
+  background-color: var(--secondary-background-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+details > summary {
+  font-weight: bold;
+  cursor: pointer;
+
+  /* Summary text should not be accidentally highlighted when clicked */
+  user-select: none;
+}
