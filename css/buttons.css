@@ -9,6 +9,7 @@ button {
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
   font-size: 1em;
+  font-family: Lora, serif;
 }
 
 button:disabled {
@@ -142,7 +143,8 @@ button.warning:disabled:active {
 
 /* Non-button elements styled as buttons */
 /* Non-button elements are most like secondary buttons so we will use secondary button styles */
-[role="button"] {
+/* We exclude elements within Leaflet panes to avoid styling map markers and controls */
+[role="button"]:not(.leaflet-pane *) {
   cursor: pointer;
   user-select: none;
   padding: 0.5rem 0.75rem;
@@ -150,16 +152,16 @@ button.warning:disabled:active {
     1px 2px 2px rgba(0, 0, 0, 0.24);
   transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
-[role="button"]:hover {
+[role="button"]:not(.leaflet-pane *):hover {
   background-color: var(--secondary-color-hover);
 }
 
-[role="button"]:active {
+[role="button"]:not(.leaflet-pane *):active {
   background-color: var(--secondary-color-active);
   transform: translate(1px, 2px);
   box-shadow: none;
 }
-[role="button"]:focus {
+[role="button"]:not(.leaflet-pane *):focus {
   outline: 2px solid var(--secondary-color-focus);
 }
 /* Since "disabled" is only supported by inputs: <button>, <fieldset>, 

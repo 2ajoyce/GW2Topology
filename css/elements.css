@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Lora, serif;
   line-height: 1.6;
   font-size: 1rem;
   padding: 0;
@@ -287,6 +287,7 @@ select {
   box-sizing: border-box;
   font-size: 1rem;
   transition: border-color 0.3s, box-shadow 0.3s;
+  font-family: Lora, serif;
 }
 
 select {

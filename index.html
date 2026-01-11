@@ -1,55 +1,87 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>GW2 Topology - Interactive Guild Wars 2 Map</title>
-    <meta name="description" content="Interactive map viewer for Guild Wars 2 waypoints and locations">
+    <meta
+      name="description"
+      content="Interactive map viewer for Guild Wars 2 waypoints and locations"
+    />
 
-    <link rel="icon" type="image/png" href="favicon.ico">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-rc.1/leaflet.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.0.0-rc.1/MarkerCluster.css">
-</head>
-<body>
+    <link rel="icon" type="image/png" href="favicon.ico" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Lora:wght@400;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css"
+    />
+  </head>
+  <body>
     <header class="site-header">
-        <div class="header-content">
-            <h1 class="site-title">GW2 Topology</h1>
-            <nav class="site-nav">
-                <a href="#" class="nav-link active">Map</a>
-                <a href="#" class="nav-link">Dailies</a>
-            </nav>
-        </div>
+      <div class="header-content">
+        <h1 class="site-title">GW2 Topology</h1>
+      </div>
     </header>
 
     <main class="map-container">
-        <div id="mapdiv"></div>
+      <div id="mapdiv"></div>
     </main>
 
     <footer class="site-footer">
-        <div class="footer-content">
-            <label for="clipdump" class="footer-label">Waypoint Code:</label>
-            <input id="clipdump" type="text" placeholder="[Click a waypoint to copy]" readonly>
-        </div>
+      <div class="footer-content">
+        <label for="clipdump" class="footer-label">Waypoint Code:</label>
+        <input
+          id="clipdump"
+          type="text"
+          placeholder="[Click a waypoint or paste code]"
+        />
+        <button id="findButton" class="btn btn-primary">Find</button>
+      </div>
     </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-rc.1/leaflet.js"></script> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.0.0-rc.1/leaflet.markercluster.js"></script> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
     <script src="js/main.js"></script>
 
     <!-- Google Analytics -->
     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
 
-        ga('create', 'UA-43936202-3', 'auto');
-        ga('send', 'pageview');
+      ga("create", "UA-43936202-3", "auto");
+      ga("send", "pageview");
     </script>
-</body>
+  </body>
 </html>
